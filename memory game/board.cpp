@@ -1,15 +1,44 @@
 #include "board.h"
 
-std::string board()
+std::string board(int size)
 {
-	std::string temp = "+-----+-----+-----+-----+\n+     +     +     +     +\n+     +     +     +     +\n+     +     +     +     +\n";
-	std::string board;
-	for (size_t i = 0; i < 4; i++)
+	if (size == 4)
 	{
-		board += temp;
+		std::string temp = "+-----+-----+-----+-----+\n+     +     +     +     +\n+     +     +     +     +\n+     +     +     +     +\n";
+		std::string board;
+		for (size_t i = 0; i < size; i++)
+		{
+			board += temp;
+		}
+		board += "+-----+-----+-----+-----+\n";
+		return board;
 	}
-	board += "+-----+-----+-----+-----+\n";
-	return board;
+	if (size == 6)
+	{
+		std::string temp = "+-----+-----+-----+-----+-----+-----+\n+     +     +     +     +     +     +\n+     +     +     +     +     +     +\n+     +     +     +     +     +     +\n";
+		std::string board;
+		for (size_t i = 0; i < size; i++)
+		{
+			board += temp;
+		}
+		board += "+-----+-----+-----+-----+-----+-----+\n";
+		return board;
+	}
+	
+}
+
+void squearsNumbering(std::string &board, std::vector <int> squears)
+{
+	for (int i = 0; i < squears.size(); i++)
+	{
+		std::string number;
+		if (i < 9)
+		{
+			number = "0";
+		}
+		number += std::to_string(i + 1);
+		board.replace(squears[i], 2, number);
+	}
 }
 
 void fillBoard(std::string& board, std::vector<int>& squares, std::vector<char> pics)

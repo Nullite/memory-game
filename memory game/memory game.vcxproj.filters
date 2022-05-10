@@ -29,7 +29,7 @@
     <ClInclude Include="board.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="structs.h">
+    <ClInclude Include="variables.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
     <ClInclude Include="game.h">
